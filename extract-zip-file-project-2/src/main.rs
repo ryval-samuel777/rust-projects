@@ -27,7 +27,7 @@ fn decompressed_zip () -> i32 {
     let mut archive = ZipArchive::new(file).unwrap();
     
     for i in 0..archive.len() {
-        let mut file = archive.by_index(1).unwrap();
+        let mut file = archive.by_index(i).unwrap();
 
         let outpath = match file.enclosed_name() {
             Some(path) => path.to_owned(),
